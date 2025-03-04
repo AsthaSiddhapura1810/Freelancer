@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Add a New Project</h1>
+    <form method="POST" action="{{ url_for('add_project') }}">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.title.label }}<br>
+            {{ form.title(size=32) }}<br>
+            {{ form.description.label }}<br>
+            {{ form.description(rows=5, cols=32) }}<br>
+            {{ form.submit() }}
+        </p>
+    </form>
+</body>
+</html>
